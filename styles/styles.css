@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color:goldenrod;
+    font-size: 40px;
+}
+
+h2 {
+    color: white;
+}
+.destacado {
+    color: #5553;
+    font-weight: 800;
+}
+
+p {
+    color: goldenrod;
+    font-size: 20px;
+}
+
+.listas {
+    color: #485848;
+    font-size: 20px;
+}
+
