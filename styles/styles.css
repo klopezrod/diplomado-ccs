@@ -1,28 +1,46 @@
-body {
-    background-color: black;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
+/* titulos */
 h1 {
-    color:goldenrod;
+    color:rgb(197, 147, 21);
     font-size: 40px;
 }
 
 h2 {
-    color: white;
+    color: rgb(223, 219, 219);
 }
 .destacado {
     color: #5553;
     font-weight: 800;
 }
 
+/* Cuerpo */
+
+body {
+    background-color: rgb(15, 13, 13);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+
 p {
-    color: goldenrod;
+    color: rgb(197, 147, 21);
     font-size: 20px;
 }
 
 .listas {
-    color: #485848;
-    font-size: 20px;
+    color: rgba(7, 181, 204, 0.533);
 }
 
+/* Header */
+.logo {
+    width: 200px;       /* Ajusta el ancho según lo pequeño que lo quieras */
+    height: auto;       /* Mantiene la proporción original de la imagen */
+}
+
+/* 3. Alinear la lista de enlaces de forma horizontal */
+.listas {
+    display: flex;
+    list-style: none;               /* Quita los viñetas/puntos de la lista */
+    gap: 20px;                      /* Espacio entre cada elemento de la lista */
+    margin: 0;
+    padding: 0;
+}
