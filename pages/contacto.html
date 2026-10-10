@@ -1,55 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contacto</title>
+    <title>Contacto</title>
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-    <header>
-         <a href="../index.html">
+
+<!-- Encabezado -->
+
+    <header class="navbar">
+        <a href="../index.html">
             <img src="../assets/istockphoto-1629004972-1024x1024.jpg" alt="Logo construcción" class="logo">
         </a>
-        <ul class="listas">
-            <li><a href="#">Contacto</a></li>
-            <li><a href="proyectos.html">Proyecto</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="sobre-mi.html">Sobre mí</a></li>
-        </ul>
-    </nav>
-</header>   
-    <h1>Contacto</h1>
-        <main>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Contacto</a></li>
+                <li><a href="./proyectos.html">Proyecto</a></li>
+                <li><a href="./servicios.html">Servicios</a></li>
+                <li><a href="./sobre-mi.html">Sobre mí</a></li>
+            </ul>
+        </nav>
+    </header> 
 
+<!-- Contenido -->
 
-        </main>
+    <main class="main">
+        <h1>Contacto</h1>
+        <img src="../assets/bloques.jpg" alt="Imagen bloques" class="home-img">
+        
+        <!-- FORMULARIO -->
+        <section class="seccion-form">
+            <h2>Solicitar Presupuesto</h2>
+            <form action="#" method="POST" class="formulario">
+                
+                <div class="campo">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+                </div>
+
+                <div class="campo">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                </div>
+
+                <div class="campo">
+                    <label for="presupuesto">Presupuesto estimado (USD):</label>
+                    <input type="number" id="presupuesto" name="presupuesto" min="100" placeholder="Ej. 1500" required>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Consulta</button>
+            </form>
+        </section>
+    </main>
+
+<!-- Pie de pagina -->
+
     <footer>
-    <div class="footer-container">
-            <p>&copy; 2026 Construcción - Todos los derechos reservados.</p>
+        <div class="footer-container">
             <div class="redes-sociales">
-            <!-- WhatsApp -->
-            <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp" class="icon">
-                <img src="../assets/whatsapp-icon-free-png.webp" alt="WhatsApp">
-            </a>
-            
-            <!-- Facebook -->
-            <a href="https://facebook.com/tu-pagina" target="_blank" aria-label="Facebook" class="icon">
-                <img src="../assets/Logo_de_Facebook.png" alt="Facebook">
-            </a>
-            
-            <!-- Instagram -->
-            <a href="https://instagram.com/tu-usuario" target="_blank" aria-label="Instagram" class="icon">
-                <img src="../assets/Instagram_icon.png" alt="Instagram">
-            </a>
-            
-            <!-- Email -->
-            <a href="mailto:correo@ejemplo.com" aria-label="Email" class="icon">
-                <img src="../assets/Email png.png" alt="Email">
-            </a>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp" class="icon">
+                    <img src="../assets/whatsapp-icon-free-png.webp" alt="WhatsApp">
+                </a>
+                
+                <!-- Facebook -->
+                <a href="https://facebook.com/tu-pagina" target="_blank" aria-label="Facebook" class="icon">
+                    <img src="../assets/Logo_de_Facebook.png" alt="Facebook">
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://instagram.com/tu-usuario" target="_blank" aria-label="Instagram" class="icon">
+                    <img src="../assets/Instagram_icon.png" alt="Instagram">
+                </a>
+                
+                <!-- Email -->
+                <a href="mailto:correo@ejemplo.com" aria-label="Email" class="icon">
+                    <img src="../assets/Email png.png" alt="Email">
+                </a>
+            </div>
         </div>
-    </div>
-    <p class="pie-pag">&copy; 2026 Kenny. Todos los derechos reservados.</p>
-</footer>
+        <p class="pie-pag">&copy; 2026 Kenny. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>

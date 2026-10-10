@@ -1,85 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kenny - Desarrollo Web</title>
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-<header>
-    <a href="index.html">
-    <img src="assets/istockphoto-1629004972-1024x1024.jpg" alt="Logo construcción" class="logo">
-    </a>
-    <nav>
-        <ul class="listas">
-            <li><a href="pages/contacto.html">Contacto</a></li>
-            <li><a href="pages/proyectos.html">Proyecto</a></li>
-            <li><a href="pages/servicios.html">Servicios</a></li>
-            <li><a href="pages/sobre-mi.html">Sobre mí</a></li>
-        </ul>
-    </nav>
-</header> 
 
-<!-- Titulo Principal -->
- <main class="main">
-    <img src="assets/bloques.jpg" alt="Imagen bloques" class="home-img">
-    <h1>Hola Soy Kenny</h1>
-    <h2>¿Quien Soy?</h2>
-    <p>Hola sou kenny, estoy aprendiendo con Coderhouse en el diplimado de desarrollo web</p>
+    <!-- Encabezado -->
 
-    <h2>¿Dónde trabajo?</h2>
-    <p>Actualmente trabajo con mi auto mientras aprendo</p>
+    <header class="navbar">
+        <a href="index.html">
+            <img src="assets/istockphoto-1629004972-1024x1024.jpg" alt="Logo construcción" class="logo">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="./pages/contacto.html">Contacto</a></li>
+                <li><a href="./pages/proyectos.html">Proyecto</a></li>
+                <li><a href="./pages/servicios.html">Servicios</a></li>
+                <li><a href="./pages/sobre-mi.html">Sobre mí</a></li>
+            </ul>
+        </nav>
+    </header> 
 
-    <h2>¿Que utilizo en mi día a día?</h2>
+<!-- Contenido -->
 
-    <p>Para comenzar mi jornada necesito:</p>
-<!-- Listas -->
-    <ol class="listas">
-        <Li>Telefono Celular</Li>
-        <li>Auto</li>
-        <li>una buena taza de cafe</li>    
+    <main class="main">
+        <img src= "./assets/bloques.jpg" alt="Imagen bloques" class="home-img">
         
-    </ol>
+        <h1>Hola Soy Kenny</h1>
+        
+        <h2>¿Quién Soy?</h2>
+        <p>Hola, soy Kenny, estoy aprendiendo con Coderhouse en el diplomado de desarrollo web.</p>
 
-    <p class="destacado">
-        Para iniciar la rutina hago lo siguiente
-    </p>
+        <h2>¿Dónde trabajo?</h2>
+        <p>Actualmente trabajo con mi auto mientras aprendo.</p>
 
-    <ul class="listas">
-        <li>Preparar cafe</li>
-        <li> Pasear al perro</li>
-        <li> el auto </li>
-        <li>arrancar con ganas</li>
+        <h2>¿Qué utilizo en mi día a día?</h2>
+        <p>Para comenzar mi jornada necesito:</p>
 
-    </ul>
-</main>
-<footer>
-    <div class="footer-container">
-            <p>&copy; 2026 Construcción - Todos los derechos reservados.</p>
+        <!-- Listas ordenadas -->
+        <ol class="listas">
+            <li>Teléfono Celular</li>
+            <li>Auto</li>
+            <li>Una buena taza de café</li>
+        </ol>
+
+        <p class="destacado">
+            Para iniciar la rutina hago lo siguiente:
+        </p>
+
+        <!-- Listas desordenadas (nota: si usas la misma clase .listas, recuerda que aplicará flex. Si prefieres lista vertical normal, puedes quitarle la clase .listas o manejarla aparte) -->
+        <ul class="listas">
+            <li>Preparar café</li>
+            <li>Pasear al perro</li>
+            <li>Revisar el auto</li>
+            <li>Arrancar con ganas</li>
+        </ul>
+    </main>
+
+   <!-- Pie de pagina -->
+    <footer>
+        <div class="footer-container">
             <div class="redes-sociales">
-            <!-- WhatsApp -->
-            <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp" class="icon">
-                <img src="./assets/whatsapp-icon-free-png.webp" alt="WhatsApp">
-            </a>
-            
-            <!-- Facebook -->
-            <a href="https://facebook.com/tu-pagina" target="_blank" aria-label="Facebook" class="icon">
-                <img src="./assets/Logo_de_Facebook.png" alt="Facebook">
-            </a>
-            
-            <!-- Instagram -->
-            <a href="https://instagram.com/tu-usuario" target="_blank" aria-label="Instagram" class="icon">
-                <img src="./assets/Instagram_icon.png" alt="Instagram">
-            </a>
-            
-            <!-- Email -->
-            <a href="mailto:correo@ejemplo.com" aria-label="Email" class="icon">
-                <img src="./assets/Email png.png" alt="Email">
-            </a>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp" class="icon">
+                    <img src="./assets/whatsapp-icon-free-png.webp" alt="WhatsApp">
+                </a>
+                
+                <!-- Facebook -->
+                <a href="https://facebook.com/tu-pagina" target="_blank" aria-label="Facebook" class="icon">
+                    <img src="./assets/Logo_de_Facebook.png" alt="Facebook">
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://instagram.com/tu-usuario" target="_blank" aria-label="Instagram" class="icon">
+                    <img src="./assets/Instagram_icon.png" alt="Instagram">
+                </a>
+                
+                <!-- Email -->
+                <a href="mailto:correo@ejemplo.com" aria-label="Email" class="icon">
+                    <img src="./assets/Email png.png" alt="Email">
+                </a>
+            </div>
         </div>
-    </div>
-    <p class="pie-pag">&copy; 2026 Kenny. Todos los derechos reservados.</p>
-</footer>
+        <p class="pie-pag">&copy; 2026 Kenny. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
