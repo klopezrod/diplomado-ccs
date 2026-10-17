@@ -3,10 +3,10 @@
    ========================================== */
 :root {
     --font-ppal: Arial, Helvetica, sans-serif;
-    --bg-ppal: #331505;          
-    --bg-sec: #461c04;           
-    --color-texto: #CCB7A0;      
-    --color-acento: #FFE8B4;  
+    --bg-ppal: #1E1B18;          
+    --bg-sec: #2D2621;           
+    --color-texto: #F4EFEA;      
+    --color-acento: #FFC107;  
 }
 
 /* ==========================================
@@ -67,6 +67,7 @@ p {
 
 
 .listas, .nav-links {
+    color: #f5e0ca;
     display: flex;
     list-style: none;
     gap: 20px;
@@ -93,6 +94,28 @@ p {
     height: 40vh;
     width: auto;
     margin-top: 1.5rem;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.card {
+    background-color: var(--bg-sec);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(204, 183, 160, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
 }
 
 /* ==========================================
@@ -141,6 +164,10 @@ p {
   background-color: #997C5A;
 }
 
+.redes-sociales {
+   display: flex;
+}
+
 /* Adaptabilidad para pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
   .navbar {
@@ -153,4 +180,10 @@ p {
   .main {
     padding: 2rem 1.5rem;
   }
+    
+  .cards-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
 }
