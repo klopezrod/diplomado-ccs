@@ -1,5 +1,14 @@
 /* ==========================================
-   0. VARIABLES DE COLOR Y FUENTES (:root)
+   0. RESET UNIVERSAL (Box Model)
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   1. VARIABLES DE COLOR Y FUENTES (:root)
    ========================================== */
 :root {
     --font-ppal: Arial, Helvetica, sans-serif;
@@ -7,15 +16,6 @@
     --bg-sec: #2D2621;           
     --color-texto: #F4EFEA;      
     --color-acento: #FFC107;     
-}
-
-/* ==========================================
-   1. RESET UNIVERSAL (Box Model)
-   ========================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 /* ==========================================
@@ -62,7 +62,7 @@ p {
    ========================================== */
 .navbar {
     display: flex;            
-    flex-direction: column;    /* Apilado en mobile */
+    flex-direction: column;   
     align-items: center;       
     gap: 1rem;
     padding: 1.5rem 1rem; 
@@ -80,7 +80,7 @@ p {
 .nav-links, .listas {
     color: #f5e0ca;
     display: flex;
-    flex-direction: column;    /* Listas apiladas en mobile */
+    flex-direction: column;    
     list-style: none;
     gap: 15px;
     margin: 0;
@@ -123,7 +123,7 @@ p {
    ========================================== */
 .cards-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Una columna en celulares */
+    grid-template-columns: 1fr 1fr; 
     gap: 1.5rem;
     margin-bottom: 2.5rem;
 }
@@ -143,7 +143,6 @@ p {
     margin-bottom: 1rem;
 }
 
-/* Estilos del Formulario de Contacto (Mobile) */
 .formulario {
     display: flex;
     flex-direction: column;
@@ -211,14 +210,13 @@ footer {
 }
 
 /* ==========================================
-   7. BREAKPOINT DESKTOP (min-width: 1024px)
+   7. ESCRITORIO 
    ========================================== */
 @media (min-width: 1024px) {
     body {
         padding: 0 3rem;
     }
 
-    /* Navbar horizontal en desktop */
     .navbar {
         flex-direction: row;
         justify-content: space-between;
@@ -234,14 +232,12 @@ footer {
         padding: 3rem 4rem;
     }
 
-    /* Tarjetas en 3 columnas para pantallas grandes */
     .cards-container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
 
-    /* DISEÑO FLEXBOX PARA CONTACTO: Imagen a un lado, Formulario al lado derecho */
     .main:has(.formulario) {
         display: flex;
         align-items: flex-start;
