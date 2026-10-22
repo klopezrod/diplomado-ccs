@@ -58,7 +58,7 @@ p {
 }
 
 /* ==========================================
-   4. ENCABEZADO Y NAVBAR (Alineación perfecta Bootstrap)
+   4. ENCABEZADO Y NAVBAR (Mobile-First)
    ========================================== */
 .navbar {
     background-color: var(--bg-sec) !important; 
@@ -79,14 +79,16 @@ p {
     display: block;
 }
 
-/* Control del menú colapsable */
-.navbar-collapse:not(.show) {
-    display: none !important;
-}
+/* Control del menú colapsable solo para pantallas pequeñas */
+@media (max-width: 1023px) {
+    .navbar-collapse:not(.show) {
+        display: none !important;
+    }
 
-.navbar-collapse.show {
-    display: flex !important;
-    flex-direction: column;
+    .navbar-collapse.show {
+        display: flex !important;
+        flex-direction: column;
+    }
 }
 
 .navbar-nav.nav-links, .navbar-nav.listas {
@@ -237,7 +239,7 @@ footer {
 }
 
 /* ==========================================
-   7. ESCRITORIO 
+   7. ESCRITORIO (>= 1024px)
    ========================================== */
 @media (min-width: 1024px) {
     body {
@@ -248,13 +250,11 @@ footer {
         padding: 1.25rem 3rem;
     }
 
-    /* Corrección clave para que en escritorio la navbar se muestre en fila y ocupe su espacio automático */
     .navbar-collapse {
         display: flex !important;
-        width: auto;
+        width: auto !important;
     }
 
-    /* En pantallas grandes volvemos a poner los elementos de la lista en fila */
     .navbar-nav.nav-links, .navbar-nav.listas {
         flex-direction: row;
         gap: 2rem;
