@@ -40,6 +40,62 @@
         <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, fugit quia. Qui earum rerum voluptate facilis cumque omnis quis quam, officia libero voluptatibus modi odio quod numquam? Odio, doloremque necessitatibus.
         </p>
+
+        <!-- CARRUSEL DE IMÁGENES CON BOOTSTRAP -->
+<section class="seccion-carrusel mb-4">
+    <div id="carruselObras" class="carousel slide" data-bs-ride="carousel">
+        
+        <!-- Indicadores (puntuación inferior) -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carruselObras" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carruselObras" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carruselObras" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Imágenes del carrusel -->
+        <div class="carousel-inner rounded-4 overflow-hidden shadow">
+            
+            <!-- Slide 1 -->
+            <div class="carousel-item active" data-bs-interval="4000">
+                <img src="../assets/plomeria-1160x700.jpg" class="d-block w-100" alt="Bloques de construcción" style="height: 400px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                    <h5>Plomeria</h5>
+                    <p>Reparacion de cañerias, cambio de tuberias y mas.</p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="../assets/Puerta 1.jpg" class="d-block w-100" alt="Instalaciones eléctricas" style="height: 400px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                    <h5>Reparacion de puertas</h5>
+                    <p>Todo en reparacion de puertas para tu hogar.</p>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="../assets/Ventana 12.jpg" class="d-block w-100" alt="Reparación de techos" style="height: 400px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                    <h5>Reparación e instalacion de ventanas</h5>
+                    <p>Solucion para esas ventanas rotas o viejas.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Botones de navegación lateral (Anterior / Siguiente) -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselObras" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselObras" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+
+    </div>
+</section>
     </main>
 
     <!-- Pie de página -->
