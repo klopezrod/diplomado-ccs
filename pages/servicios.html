@@ -3,31 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios</title>
+    <title>Servicios - Construcción y Mantenimiento</title>
+    
+    <!-- CSS de Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Hoja de estilos personalizada -->
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
 
-<!-- Encabezado -->
-    <header class="navbar">
-        <a href="../index.html">
-            <img src="../assets/Logo_nuevo-removebg-preview.png" alt="Logo construcción" class="logo">
-        </a>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="./contacto.html">Contacto</a></li>
-                <li><a href="./proyectos.html">Proyecto</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="./sobre-mi.html">Sobre mí</a></li>
-            </ul>
-        </nav>
-    </header> 
+    <!-- Encabezado -->
+    <header class="navbar navbar-expand-lg sticky-top">
+    <a class="navbar-brand" href="../index.html">
+        <img src="../assets/Logo_nuevo-removebg-preview.png" alt="Logo construcción" class="logo">
+    </a>
+    
+    <!-- Botón hamburguesa para móviles -->
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-<!-- Contenido -->
+    <nav class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
+        <ul class="navbar-nav nav-links mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../pages/contacto.html">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="../pages/proyectos.html">Proyecto</a></li>
+            <li class="nav-item"><a class="nav-link" href="../pages/servicios.html">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Sobre mí</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <!-- Contenido Principal -->
     <main class="main">
         <h1>Nuestros Servicios</h1>
         
-        <!-- NUEVA SECCIÓN DE CARDS / TARJETAS -->
+        <!-- SECCIÓN DE CARDS / TARJETAS -->
         <section class="seccion-cards">
             <h2>Especialidades y Beneficios</h2>
             <div class="cards-container">
@@ -35,23 +46,24 @@
                 <!-- Card 1 -->
                 <div class="card">
                     <img src="../assets/electricista.jpg" alt="Electricista">
-                    <h3>Reparaciones Electricas</h3>
-                    <p>Reparacion e instalacion de sistema electrico</p>
+                    <h3>Reparaciones Eléctricas</h3>
+                    <p>Reparación e instalación de sistema eléctrico.</p>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="card">
-                    <img src="../assets/plomeria-1160x700.jpg" alt="Plomeria">
-                    <h3>Plomeria</h3>
-                    <p>Reparacion de tuberias y sistema de drenaje</p>
+                    <img src="../assets/plomeria-1160x700.jpg" alt="Plomería">
+                    <h3>Plomería</h3>
+                    <p>Reparación de tuberías y sistema de drenaje.</p>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="card">
-                    <img src="../assets/reparacion techos.jpg" alt="Reparacion de Techos">
-                    <h3>Reparacion de techos</h3>
-                    <p>Reparacion de techos, filtraciones, corrocion y mas</p>
+                    <img src="../assets/reparacion techos.jpg" alt="Reparación de Techos">
+                    <h3>Reparación de techos</h3>
+                    <p>Reparación de techos, filtraciones, corrosión y más.</p>
                 </div>
+
                 <!-- Card 4 -->
                 <div class="card">
                     <img src="../assets/asesoramiento.jpg" alt="Asesoramiento profesional">
@@ -95,7 +107,7 @@
         </section>
     </main>
 
-<!-- Pie de pagina -->
+    <!-- Pie de página -->
     <footer>
         <div class="footer-container">
             <div class="redes-sociales">
@@ -123,5 +135,7 @@
         <p class="pie-pag">&copy; 2026 Kenny. Todos los derechos reservados.</p>
     </footer>
 
+ <!-- JS de Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -13,9 +13,9 @@
 :root {
     --font-ppal: Arial, Helvetica, sans-serif;
     --bg-ppal: #1E1B18;          
-    --bg-sec: #2D2621;           
+    --bg-sec: #1E1B18;           
     --color-texto: #F4EFEA;      
-    --color-acento: #FFC107;     
+    --color-acento: #FFC107;    
 }
 
 /* ==========================================
@@ -58,46 +58,68 @@ p {
 }
 
 /* ==========================================
-   4. ENCABEZADO Y NAVBAR (Mobile por defecto)
+   4. ENCABEZADO Y NAVBAR (Alineación perfecta Bootstrap)
    ========================================== */
 .navbar {
-    display: flex;            
-    flex-direction: column;   
-    align-items: center;       
-    gap: 1rem;
-    padding: 1.5rem 1rem; 
-    background-color: var(--bg-sec); 
-    color: #ffffff;
+    background-color: var(--bg-sec) !important; 
+    padding: 1rem 1.5rem;
     margin-bottom: 2rem; 
-    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    width: 180px;
+    width: 150px;
     height: auto;
+    display: block;
 }
 
-.nav-links, .listas {
-    color: #f5e0ca;
-    display: flex;
-    flex-direction: column;    
+/* Control del menú colapsable */
+.navbar-collapse:not(.show) {
+    display: none !important;
+}
+
+.navbar-collapse.show {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.navbar-nav.nav-links, .navbar-nav.listas {
     list-style: none;
-    gap: 15px;
     margin: 0;
-    padding: 0;
+    padding: 0.5rem 0;
+    gap: 5px;
+    width: 100%;
 }
 
-.nav-links a, .listas a {
-    color: #ffffff;
+.navbar-nav .nav-link {
+    color: var(--color-acento) !important;
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 1rem; 
+    padding: 0.5rem 1rem !important; 
     border-radius: 4px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-align: center;
 }
 
-.nav-links a:hover, .listas a:hover {
+.navbar-nav .nav-link:hover, 
+.navbar-nav .nav-link.active {
     background-color: #997C5A;
+    color: #ffffff !important;
+}
+
+/* Personalización del botón hamburguesa */
+.custom-toggler.navbar-toggler {
+    border-color: var(--color-acento);
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FFC107' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 /* ==========================================
@@ -116,6 +138,7 @@ p {
     object-fit: cover;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
+    border-radius: 15px;
 }
 
 /* ==========================================
@@ -142,6 +165,7 @@ p {
     border-radius: 4px;
     margin-bottom: 1rem;
 }
+
 .formulario {
     display: grid;
     grid-template-columns: 1fr;
@@ -208,6 +232,10 @@ footer {
     margin-top: 1rem;
 }
 
+.seccion-tabla {
+    color: #FFC107;
+}
+
 /* ==========================================
    7. ESCRITORIO 
    ========================================== */
@@ -217,14 +245,25 @@ footer {
     }
 
     .navbar {
-        flex-direction: row;
-        justify-content: space-between;
         padding: 1.25rem 3rem;
     }
 
-    .nav-links, .listas {
+    /* Corrección clave para que en escritorio la navbar se muestre en fila y ocupe su espacio automático */
+    .navbar-collapse {
+        display: flex !important;
+        width: auto;
+    }
+
+    /* En pantallas grandes volvemos a poner los elementos de la lista en fila */
+    .navbar-nav.nav-links, .navbar-nav.listas {
         flex-direction: row;
         gap: 2rem;
+        padding: 0;
+        width: auto;
+    }
+
+    .navbar-nav .nav-link {
+        text-align: left;
     }
 
     .main {

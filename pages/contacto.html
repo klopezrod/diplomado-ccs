@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto - Kenny - Desarrollo Web</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
 
-<!-- Encabezado -->
-    <header class="navbar">
-        <a href="../index.html">
-            <img src="../assets/Logo_nuevo-removebg-preview.png" alt="Logo construcción" class="logo">
-        </a>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#">Contacto</a></li>
-                <li><a href="./proyectos.html">Proyectos</a></li>
-                <li><a href="./servicios.html">Servicios</a></li>
-                <li><a href="./sobre-mi.html">Sobre mí</a></li>
-            </ul>
-        </nav>
+    <!-- Encabezado / Navbar Inteligente -->
+    <header class="navbar navbar-expand-lg sticky-top">
+    <a class="navbar-brand" href="../index.html">
+        <img src="../assets/Logo_nuevo-removebg-preview.png" alt="Logo construcción" class="logo">
+    </a>
+    
+    <!-- Botón hamburguesa para móviles -->
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <nav class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
+        <ul class="navbar-nav nav-links mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../pages/contacto.html">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="../pages/proyectos.html">Proyecto</a></li>
+            <li class="nav-item"><a class="nav-link" href="../pages/servicios.html">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Sobre mí</a></li>
+        </ul>
+    </nav>
     </header> 
 
-<!-- Contenido -->
+    <!-- Contenido -->
     <main class="main">
         <h1>Contacto</h1>
         <img src="../assets/bloques.jpg" alt="Imagen bloques" class="home-img">
@@ -53,7 +61,7 @@
         </section>
     </main>
 
-<!-- Pie de pagina -->
+    <!-- Pie de pagina -->
     <footer>
         <div class="footer-container">
             <div class="redes-sociales">
@@ -81,5 +89,7 @@
         <p class="pie-pag">&copy; 2026 Kenny. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- JS de Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
