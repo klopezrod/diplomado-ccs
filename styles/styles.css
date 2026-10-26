@@ -79,8 +79,8 @@ p {
     display: block;
 }
 
-/* Control del menú colapsable solo para pantallas pequeñas */
-@media (max-width: 1023px) {
+/* Control del menú colapsable para dispositivos menores a 992px (Breakpoint de Bootstrap lg) */
+@media (max-width: 991.98px) {
     .navbar-collapse:not(.show) {
         display: none !important;
     }
@@ -144,7 +144,7 @@ p {
 }
 
 /* ==========================================
-   CARDS - Versión Grid (Mobile-First: 1 columna)
+   CARDS - Estilos para Bootstrap Grid & Cards
    ========================================== */
 .cards-container {
     display: grid;
@@ -154,10 +154,17 @@ p {
 }
 
 .card {
-    background-color: var(--bg-sec);
+    background-color: var(--bg-sec) !important;
     padding: 1.5rem;
     border-radius: 8px;
-    border: 1px solid rgba(204, 183, 160, 0.2);
+    border: 1px solid rgba(255, 193, 7, 0.2) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
+    border-color: var(--color-acento) !important;
 }
 
 .card img {
@@ -166,6 +173,14 @@ p {
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 1rem;
+}
+
+.card .card-title {
+    color: var(--color-acento) !important;
+}
+
+.card .card-text {
+    color: var(--color-texto) !important;
 }
 
 .formulario {
@@ -239,9 +254,9 @@ footer {
 }
 
 /* ==========================================
-   7. ESCRITORIO (>= 1024px)
+   7. ESCRITORIO (>= 992px unificado con Bootstrap lg)
    ========================================== */
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
     body {
         padding: 0 3rem;
     }
