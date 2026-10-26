@@ -15,7 +15,7 @@
     --bg-ppal: #1E1B18;          
     --bg-sec: #1E1B18;           
     --color-texto: #F4EFEA;      
-    --color-acento: #FFC107;    
+    --color-acento: #e98d04bd;    
 }
 
 /* ==========================================
@@ -37,7 +37,7 @@ h1 {
 }
 
 h2 {
-    color: var(--color-texto);
+    color: #e5ad06;
     margin-bottom: 0.75rem;
 }
 
@@ -141,6 +141,10 @@ p {
     margin-top: 1rem;
     margin-bottom: 1.5rem;
     border-radius: 15px;
+}
+
+.color-lista {
+    color: #997C5A
 }
 
 /* ==========================================
