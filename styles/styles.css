@@ -317,6 +317,19 @@ footer {
 /* ==========================================
    7. ESCRITORIO (>= 992px unificado con Bootstrap lg)
    ========================================== */
+/* ==========================================
+   MEDIA QUERY PARA MÓVILES (Pantallas chicas <= 576px)
+   ========================================== */
+@media (max-width: 576px) {
+    .caja-animar-2 {
+        margin-left: 0;       /* Quitamos el margen lateral */
+        margin-top: 3rem;   /* Espacio superior limpio para que no se choquen al animar */
+    }
+}
+
+/* ==========================================
+   MEDIA QUERY PARA ESCRITORIO (>= 992px unificado con Bootstrap lg)
+   ========================================== */
 @media (min-width: 992px) {
     body {
         padding: 0 3rem;
