@@ -12,9 +12,9 @@
    ========================================== */
 :root {
     --font-ppal: Arial, Helvetica, sans-serif;
-    --bg-ppal: #1E1B18;          
-    --bg-sec: #1E1B18;           
-    --color-texto: #F4EFEA;      
+    --bg-ppal: #1E1B18;         
+    --bg-sec: #1E1B18;         
+    --color-texto: #F4EFEA;     
     --color-acento: #e98d04bd;    
 }
 
@@ -31,7 +31,7 @@ body {
    3. TIPOGRAFÍA
    ========================================== */
 h1 {
-    color: var(--color-acento);      
+    color: var(--color-acento);     
     font-size: 32px;
     margin-bottom: 1rem;
 }
@@ -79,15 +79,24 @@ p {
     display: block;
 }
 
-/* Control del menú colapsable para dispositivos menores a 992px (Breakpoint de Bootstrap lg) */
+/* Control y animación suave del menú colapsable en móviles (< 992px) */
 @media (max-width: 991.98px) {
-    .navbar-collapse:not(.show) {
-        display: none !important;
+    /* Transición suave nativa de Bootstrap mejorada */
+    .navbar-collapse {
+        transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
     }
 
     .navbar-collapse.show {
-        display: flex !important;
-        flex-direction: column;
+        max-height: 350px; /* Altura máxima estimada para desplegarse cómodamente */
+        opacity: 1;
+    }
+
+    .navbar-collapse.collapsing {
+        height: auto !important;
+        transition: height 0.35s ease-in-out, opacity 0.3s ease-in-out;
     }
 }
 
@@ -121,7 +130,7 @@ p {
 }
 
 .custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FFC107' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23e98d04bd' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 /* ==========================================
@@ -144,7 +153,7 @@ p {
 }
 
 .color-lista {
-    color: #997C5A
+    color: #997C5A;
 }
 
 /* ==========================================
@@ -185,6 +194,25 @@ p {
 
 .card .card-text {
     color: var(--color-texto) !important;
+}
+
+/* ==========================================
+   ESTILOS PARA LA CAJA DE ANIMACIÓN (BOTÓN)
+   ========================================== */
+.caja-animar {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background-color: var(--color-acento);
+    color: var(--bg-ppal);
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 120px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .formulario {
@@ -258,6 +286,23 @@ footer {
 }
 
 /* ==========================================
+   PROPIEDADES DE ANIMACION
+   ========================================== */
+@keyframes caja-animar {
+   from {transform: translateX(0);
+    }
+to    {
+    transform: translateX(80px);
+    }
+}
+.caja-animar {
+    animation-name: caja-animar;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+/* ==========================================
    7. ESCRITORIO (>= 992px unificado con Bootstrap lg)
    ========================================== */
 @media (min-width: 992px) {
@@ -272,6 +317,9 @@ footer {
     .navbar-collapse {
         display: flex !important;
         width: auto !important;
+        max-height: none !important;
+        opacity: 1 !important;
+        overflow: visible !important;
     }
 
     .navbar-nav.nav-links, .navbar-nav.listas {
