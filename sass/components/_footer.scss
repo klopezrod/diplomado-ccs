@@ -1,0 +1,33 @@
+@use "../utilities/variables" as variables;
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    color: rgb(223, 219, 219);
+
+    .redes-sociales {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 1rem;
+
+        .icon {
+            img {
+                width: 32px;            
+                height: 32px;           
+                object-fit: contain;
+                display: block;
+            }
+        }
+    }
+
+    .pie-pag {
+        font-size: 15px;
+        margin-top: 1rem;
+    }
+
+    .seccion-tabla {
+        color: #FFC107;
+    }
+}

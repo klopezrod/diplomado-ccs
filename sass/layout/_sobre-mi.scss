@@ -1,0 +1,54 @@
+@use "../utilities/variables" as variables;
+
+.main {
+    border: 2px solid orange;
+    padding: 2rem 1.5rem; 
+    margin-bottom: 3rem; 
+
+    h1 {
+        color: variables.$color-acento;
+        font-size: 32px;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: variables.$color-texto;
+        font-size: 18px;
+        margin-bottom: 1.5rem;
+    }
+
+    // Sección del carrusel de Bootstrap (compartida/similar en servicios)
+    .seccion-carrusel {
+        margin-bottom: 1.5rem;
+
+        .carousel-inner {
+            border-radius: 1rem; 
+            overflow: hidden;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+
+            .carousel-item {
+                img {
+                    height: 400px;
+                    object-fit: cover;
+                }
+
+                .carousel-caption {
+                    background-color: rgba(33, 37, 41, 0.5); 
+                    border-radius: 0.375rem; 
+                    padding: 0.5rem; 
+
+                    h5 {
+                        color: variables.$color-heading;
+                        font-family: variables.$font-heading;
+                    }
+
+                    p {
+                        color: variables.$color-texto;
+                        font-size: 1rem;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

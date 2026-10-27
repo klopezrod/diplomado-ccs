@@ -1,392 +1,457 @@
-/* ==========================================
-   0. RESET UNIVERSAL (Box Model)
-   ========================================== */
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ==========================================
-   1. VARIABLES DE COLOR Y FUENTES (:root)
-   ========================================== */
-:root {
-    --font-ppal: Arial, Helvetica, sans-serif;
-    --bg-ppal: #1E1B18;         
-    --bg-sec: #1E1B18;         
-    --color-texto: #F4EFEA;     
-    --color-acento: #e98d04bd;    
-}
-
-/* ==========================================
-   2. ESTILOS GENERALES Y BASE (Mobile-First)
-   ========================================== */
 body {
-    background-color: var(--bg-ppal); 
-    font-family: var(--font-ppal);    
-    padding: 0 1rem; 
+  background-color: #1E1B18;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  padding: 10px 50px 0;
+  color: #F4EFEA;
 }
 
-/* ==========================================
-   3. TIPOGRAFÍA
-   ========================================== */
-h1 {
-    color: var(--color-acento);     
-    font-size: 32px;
-    margin-bottom: 1rem;
-}
-
-h2 {
-    color: #e5ad06;
-    margin-bottom: 0.75rem;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: bolder;
+  color: #FFFFFF;
 }
 
 p {
-    color: var(--color-texto);        
-    font-size: 18px;
-    margin-bottom: 1.5rem;
+  font-size: 18px;
+  color: #F4EFEA;
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #E98D04 !important;
 }
 
 .destacado {
-    color: #FFDF98;
-    font-weight: 800;
+  color: #FFDF98;
+  font-weight: 800;
 }
 
 .campo {
-    color: #dfdbd4;
-    font-weight: 50;
+  color: #dfdbd4;
+  font-weight: 50;
 }
 
 /* ==========================================
    4. ENCABEZADO Y NAVBAR (Mobile-First)
    ========================================== */
 .navbar {
-    background-color: var(--bg-sec) !important; 
-    padding: 1rem 1.5rem;
-    margin-bottom: 2rem; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: #2A2622 !important;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-
 .navbar .container-fluid {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar {
+  /* Control y animación suave del menú colapsable en móviles (< 992px) */
+}
+@media (max-width: 991.98px) {
+  .navbar .navbar-collapse {
+    transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+  .navbar .navbar-collapse.show {
+    max-height: 350px;
+    opacity: 1;
+  }
+  .navbar .navbar-collapse.collapsing {
+    height: auto !important;
+    transition: height 0.35s ease-in-out, opacity 0.3s ease-in-out;
+  }
+}
+.navbar .navbar-nav.nav-links, .navbar .navbar-nav.listas {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  gap: 5px;
+  width: 100%;
+}
+.navbar .navbar-nav .nav-link {
+  color: #E98D04 !important;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  text-align: center;
+}
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active {
+  background-color: #997C5A;
+  color: #ffffff !important;
+}
+.navbar {
+  /* Personalización del botón hamburguesa */
+}
+.navbar .custom-toggler.navbar-toggler {
+  border-color: #E98D04;
+}
+.navbar .custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23e98d04bd' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 .logo {
-    width: 150px;
-    height: auto;
-    display: block;
+  width: 150px;
+  height: auto;
+  display: block;
 }
 
-/* Control y animación suave del menú colapsable en móviles (< 992px) */
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-    }
-
-    .navbar-collapse.show {
-        max-height: 350px;
-        opacity: 1;
-    }
-
-    .navbar-collapse.collapsing {
-        height: auto !important;
-        transition: height 0.35s ease-in-out, opacity 0.3s ease-in-out;
-    }
-}
-
-.navbar-nav.nav-links, .navbar-nav.listas {
-    list-style: none;
-    margin: 0;
-    padding: 0.5rem 0;
-    gap: 5px;
-    width: 100%;
-}
-
-.navbar-nav .nav-link {
-    color: var(--color-acento) !important;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 1rem !important; 
-    border-radius: 4px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    text-align: center;
-}
-
-.navbar-nav .nav-link:hover, 
-.navbar-nav .nav-link.active {
-    background-color: #997C5A;
-    color: #ffffff !important;
-}
-
-/* Personalización del botón hamburguesa */
-.custom-toggler.navbar-toggler {
-    border-color: var(--color-acento);
-}
-
-.custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23e98d04bd' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-
-/* ==========================================
-   5. CONTENIDO PRINCIPAL Y SECCIONES
-   ========================================== */
-.main {
-    border: 2px solid orange;
-    padding: 2rem 1.5rem; 
-    margin-bottom: 3rem; 
-}
-
-.home-img {
-    width: 100%;
-    height: auto;
-    max-height: 40vh;
-    object-fit: cover;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-    border-radius: 15px;
-}
-
-.color-lista {
-    color: #997C5A;
-}
-
-/* ==========================================
-   CARDS - Estilos para Bootstrap Grid & Cards
-   ========================================== */
-.cards-container {
-    display: grid;
-    grid-template-columns: 1fr; 
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
-}
-
-.card {
-    background-color: var(--bg-sec) !important;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 193, 7, 0.2) !important;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
-    border-color: var(--color-acento) !important;
-}
-
-.card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-}
-
-.card .card-title {
-    color: var(--color-acento) !important;
-}
-
-.card .card-text {
-    color: var(--color-texto) !important;
-}
-
-/* ==========================================
-   CONTENEDOR PARA LAS CAJAS ANIMADAS
-   ========================================== */
-.caja-animar, 
-.caja-animar-2 {
-    display: inline-block !important;
-    width: 120px;
-    height: 120px;
-    background-color: var(--color-acento);
-    color: var(--bg-ppal);
-    border: 2px solid #ffffff;
-    border-radius: 8px;
-    text-align: center;
-    line-height: 120px;
-    font-weight: bold;
-    font-size: 18px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    margin-top: 2rem;
-}
-
-/* Separación específica para que la segunda caja esté más a la derecha */
-.caja-animar {
-    margin-right: 8rem; /* Espacio normal a la derecha de la primera caja */
-}
-
-.caja-animar-2 {
-    margin-left: 3rem;  /* Empuja la segunda caja aún más hacia la derecha */
-}
-
-.formulario .campo {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.4rem;
-}
-
-.formulario input {
-    padding: 0.75rem;
-    border-radius: 4px;
-    border: 1px solid var(--color-texto);
-    background-color: var(--bg-sec);
-    color: var(--color-texto);
-    font-size: 1rem;
-}
-
-.btn-enviar {
-    background-color: var(--color-acento);
-    color: var(--bg-ppal);
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.btn-enviar:hover {
-    background-color: #e5ad06;
-}
-
-/* ==========================================
-   6. PIE DE PÁGINA Y REDES SOCIALES
-   ========================================== */
 footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-    color: rgb(223, 219, 219);
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  color: rgb(223, 219, 219);
+}
+footer .redes-sociales {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 1rem;
+}
+footer .redes-sociales .icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
+footer .pie-pag {
+  font-size: 15px;
+  margin-top: 1rem;
+}
+footer .seccion-tabla {
+  color: #FFC107;
 }
 
-.redes-sociales {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 1rem;
+.main {
+  border: 2px solid orange;
+  padding: 2rem 1.5rem;
+  margin-bottom: 3rem;
 }
-
-.redes-sociales .icon img {
-    width: 32px;        
-    height: 32px;       
-    object-fit: contain;
-    display: block;
+.main .home-img {
+  width: 100%;
+  height: auto;
+  max-height: 40vh;
+  object-fit: cover;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 15px;
 }
-
-.pie-pag {
-    font-size: 15px;
-    margin-top: 1rem;
+.main .color-lista {
+  color: #997C5A;
+  padding-left: 1.5rem;
 }
-
-.seccion-tabla {
-    color: #FFC107;
+@media (min-width: 992px) {
+  .main {
+    padding: 3rem 4rem;
+  }
 }
 
 /* ==========================================
-   PROPIEDADES DE ANIMACION Y KEYFRAMES
+   SECCIÓN DE TARJETAS / ENFOQUES (HOME)
    ========================================== */
-@keyframes animacionCaja1 {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(60px);
-    }
+.card {
+  background-color: #2A2622;
+  border: 1px solid rgba(255, 193, 7, 0.2);
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  border-color: #E98D04;
+}
+.card .card-body {
+  padding: 1.5rem;
+}
+.card .card-body .card-title {
+  color: #E98D04;
+  font-family: "Playfair Display", Georgia, serif;
+}
+.card .card-body .card-text {
+  color: #F4EFEA;
+}
+.card .card-body .btn-outline-warning {
+  color: #E98D04;
+  border-color: #E98D04;
+}
+.card .card-body .btn-outline-warning:hover {
+  background-color: #E98D04;
+  color: #1E1B18;
 }
 
-.caja-animar {
-    animation-name: animacionCaja1;
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
+/* ==========================================
+   CAJAS ANIMADAS Y KEYFRAMES
+   ========================================== */
+.caja-animar,
 .caja-animar-2 {
   display: inline-block;
-  margin: 0 0.5rem;
+  width: 120px;
+  height: 120px;
+  background-color: #E98D04;
+  color: #1E1B18;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 120px;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  margin-top: 2rem;
+}
 
-  animation: bounce;
+.caja-animar {
+  margin-right: 8rem;
+  animation-name: animacionCaja1;
   animation-duration: 2s;
+  animation-delay: 1s;
   animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
-/* ==========================================
-   7. ESCRITORIO (>= 992px unificado con Bootstrap lg)
-   ========================================== */
-/* ==========================================
-   MEDIA QUERY PARA MÓVILES (Pantallas chicas <= 576px)
-   ========================================== */
+
+.caja-animar-2 {
+  margin: 0 0.5rem 0 3rem;
+  animation: bounce 2s infinite;
+}
 @media (max-width: 576px) {
-    .caja-animar-2 {
-        margin-left: 0;       /* Quitamos el margen lateral */
-        margin-top: 3rem;   /* Espacio superior limpio para que no se choquen al animar */
-    }
+  .caja-animar-2 {
+    margin-left: 0;
+    margin-top: 3rem;
+  }
 }
 
-/* ==========================================
-   MEDIA QUERY PARA ESCRITORIO (>= 992px unificado con Bootstrap lg)
-   ========================================== */
+@keyframes animacionCaja1 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(60px);
+  }
+}
+.main {
+  border: 2px solid orange;
+  padding: 2rem 1.5rem;
+  margin-bottom: 3rem;
+}
+.main h1 {
+  color: #E98D04;
+  font-size: 32px;
+  margin-bottom: 1rem;
+  font-family: "Playfair Display", Georgia, serif;
+}
+.main .home-img {
+  width: 100%;
+  height: auto;
+  max-height: 40vh;
+  object-fit: cover;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 15px;
+}
+.main .seccion-form h2 {
+  color: #e5ad06;
+  margin-bottom: 1rem;
+  font-family: "Playfair Display", Georgia, serif;
+}
+.main .seccion-form .formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.main .seccion-form .formulario .campo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+  color: #dfdbd4;
+  font-weight: 50;
+}
+.main .seccion-form .formulario .campo label {
+  font-size: 0.95rem;
+  color: #F4EFEA;
+}
+.main .seccion-form .formulario input {
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #F4EFEA;
+  background-color: #2A2622;
+  color: #F4EFEA;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+.main .seccion-form .formulario input:focus {
+  outline: none;
+  border-color: #E98D04;
+}
+.main .seccion-form .formulario input::placeholder {
+  color: rgba(244, 239, 234, 0.4);
+}
+.main .btn-enviar {
+  background-color: #E98D04;
+  color: #1E1B18;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+.main .btn-enviar:hover {
+  background-color: #e5ad06;
+}
+.main {
+  /* Adaptación para pantallas grandes (Escritorio) */
+}
 @media (min-width: 992px) {
-    body {
-        padding: 0 3rem;
-    }
-
-    .navbar {
-        padding: 1.25rem 3rem;
-    }
-
-    .navbar-collapse {
-        display: flex !important;
-        width: auto !important;
-        max-height: none !important;
-        opacity: 1 !important;
-        overflow: visible !important;
-    }
-
-    .navbar-nav.nav-links, .navbar-nav.listas {
-        flex-direction: row;
-        gap: 2rem;
-        padding: 0;
-        width: auto;
-    }
-
-    .navbar-nav .nav-link {
-        text-align: left;
-    }
-
-    .main {
-        padding: 3rem 4rem;
-    }
-
-    .cards-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-
-    .main:has(.formulario) {
-        display: flex;
-        align-items: flex-start;
-        gap: 3rem;
-        flex-wrap: wrap;
-    }
-
-    .main:has(.formulario) h1 {
-        width: 100%;
-    }
-
-    .main:has(.formulario) .home-img {
-        flex: 1;
-        max-width: 45%;
-        margin-top: 0;
-    }
-
-    .main:has(.formulario) .seccion-form {
-        flex: 1;
-        min-width: 300px;
-    }
+  .main {
+    padding: 3rem 4rem;
+  }
+  .main:has(.formulario) {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .main:has(.formulario) h1 {
+    width: 100%;
+  }
+  .main:has(.formulario) .home-img {
+    flex: 1;
+    max-width: 45%;
+    margin-top: 0;
+  }
+  .main:has(.formulario) .seccion-form {
+    flex: 1;
+    min-width: 300px;
+  }
 }
+
+.main {
+  border: 2px solid orange;
+  padding: 2rem 1.5rem;
+  margin-bottom: 3rem;
+}
+.main h1 {
+  color: #E98D04;
+  font-size: 32px;
+  margin-bottom: 1rem;
+}
+.main .seccion-multimedia {
+  margin-top: 1.5rem;
+}
+.main .seccion-multimedia h2 {
+  color: #e5ad06;
+  margin-bottom: 0.75rem;
+}
+.main .seccion-multimedia iframe {
+  width: 100%;
+  height: 500px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 576px) {
+  .main .seccion-multimedia iframe {
+    height: 300px;
+  }
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+@media (min-width: 992px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+.cards-container .card {
+  background-color: #2A2622;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 193, 7, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.cards-container .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  border-color: #E98D04;
+}
+.cards-container .card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.cards-container .card .card-title {
+  color: #E98D04;
+}
+.cards-container .card .card-text {
+  color: #F4EFEA;
+}
+
+.main {
+  border: 2px solid orange;
+  padding: 2rem 1.5rem;
+  margin-bottom: 3rem;
+}
+.main h1 {
+  color: #E98D04;
+  font-size: 32px;
+  margin-bottom: 1rem;
+}
+.main p {
+  color: #F4EFEA;
+  font-size: 18px;
+  margin-bottom: 1.5rem;
+}
+.main .seccion-carrusel {
+  margin-bottom: 1.5rem;
+}
+.main .seccion-carrusel .carousel-inner {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.main .seccion-carrusel .carousel-inner .carousel-item img {
+  height: 400px;
+  object-fit: cover;
+}
+.main .seccion-carrusel .carousel-inner .carousel-item .carousel-caption {
+  background-color: rgba(33, 37, 41, 0.5);
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+}
+.main .seccion-carrusel .carousel-inner .carousel-item .carousel-caption h5 {
+  color: #FFFFFF;
+  font-family: "Playfair Display", Georgia, serif;
+}
+.main .seccion-carrusel .carousel-inner .carousel-item .carousel-caption p {
+  color: #F4EFEA;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,45 @@
+@use "variables";
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: variables.$bg-ppal;
+    font-family: variables.$font-ppal;
+    padding: 10px 50px 0;
+    color: variables.$color-texto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: variables.$font-heading;
+    font-weight: bolder;
+    color: variables.$color-heading;
+}
+
+p{
+    font-size: 18px;
+    color: variables.$color-texto;
+    margin-bottom: 1.5rem;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: variables.$color-acento !important;
+}
+
+.destacado {
+    color: #FFDF98;
+    font-weight: 800;
+}
+
+.campo {
+    color: #dfdbd4;
+    font-weight: 50;
+}
