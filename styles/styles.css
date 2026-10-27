@@ -81,7 +81,6 @@ p {
 
 /* Control y animación suave del menú colapsable en móviles (< 992px) */
 @media (max-width: 991.98px) {
-    /* Transición suave nativa de Bootstrap mejorada */
     .navbar-collapse {
         transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out;
         max-height: 0;
@@ -90,7 +89,7 @@ p {
     }
 
     .navbar-collapse.show {
-        max-height: 350px; /* Altura máxima estimada para desplegarse cómodamente */
+        max-height: 350px;
         opacity: 1;
     }
 
@@ -197,10 +196,11 @@ p {
 }
 
 /* ==========================================
-   ESTILOS PARA LA CAJA DE ANIMACIÓN (BOTÓN)
+   CONTENEDOR PARA LAS CAJAS ANIMADAS
    ========================================== */
-.caja-animar {
-    display: inline-block;
+.caja-animar, 
+.caja-animar-2 {
+    display: inline-block !important;
     width: 120px;
     height: 120px;
     background-color: var(--color-acento);
@@ -211,15 +211,17 @@ p {
     line-height: 120px;
     font-weight: bold;
     font-size: 18px;
-    margin-top: 2rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin-top: 2rem;
 }
 
-.formulario {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-    margin-top: 1rem;
+/* Separación específica para que la segunda caja esté más a la derecha */
+.caja-animar {
+    margin-right: 8rem; /* Espacio normal a la derecha de la primera caja */
+}
+
+.caja-animar-2 {
+    margin-left: 3rem;  /* Empuja la segunda caja aún más hacia la derecha */
 }
 
 .formulario .campo {
@@ -286,21 +288,31 @@ footer {
 }
 
 /* ==========================================
-   PROPIEDADES DE ANIMACION
+   PROPIEDADES DE ANIMACION Y KEYFRAMES
    ========================================== */
-@keyframes caja-animar {
-   from {transform: translateX(0);
+@keyframes animacionCaja1 {
+    from {
+        transform: translateX(0);
     }
-to    {
-    transform: translateX(80px);
+    to {
+        transform: translateX(60px);
     }
 }
+
 .caja-animar {
-    animation-name: caja-animar;
+    animation-name: animacionCaja1;
     animation-duration: 2s;
-    animation-delay: 4s;
+    animation-delay: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+.caja-animar-2 {
+  display: inline-block;
+  margin: 0 0.5rem;
+
+  animation: bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 /* ==========================================
    7. ESCRITORIO (>= 992px unificado con Bootstrap lg)
