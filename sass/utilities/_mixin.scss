@@ -1,0 +1,33 @@
+@use "../utilities/variables";
+
+@mixin flex ($fd, $fw, $jc, $ai, $g){
+    // valores de flex
+    display: flex;
+    flex-direction: $fd;
+    flex-wrap: $fw;
+    justify-content:$jc;
+    align-items: $ai;
+    gap: $g;
+
+}
+
+@mixin flex-red1($jc, $ai) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin caja-base($size: 120px) {
+    display: inline-block;
+    width: $size;
+    height: $size;
+    background-color: variables.$color-acento;
+    color: variables.$bg-ppal;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    text-align: center;
+    line-height: $size;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}

@@ -143,8 +143,17 @@ footer .seccion-tabla {
   border: 2px solid orange;
   padding: 2rem 1.5rem;
   margin-bottom: 3rem;
+  /*.home-img {
+      width: 100%;
+      height: auto;
+      max-height: 40vh;
+      object-fit: cover;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 15px;*/
 }
-.main .home-img {
+
+.home-img {
   width: 100%;
   height: auto;
   max-height: 40vh;
@@ -152,17 +161,21 @@ footer .seccion-tabla {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   border-radius: 15px;
+  transition: transform 0.4s ease;
 }
-.main .color-lista {
+.home-img:hover {
+  transform: scale(1.03);
+}
+
+.color-lista {
   color: #997C5A;
   padding-left: 1.5rem;
 }
-@media (min-width: 992px) {
-  .main {
-    padding: 3rem 4rem;
-  }
-}
 
+/* @media (min-width: 992px) {
+        padding: 3rem 4rem;
+    }
+*/
 /* ==========================================
    SECCIÓN DE TARJETAS / ENFOQUES (HOME)
    ========================================== */
