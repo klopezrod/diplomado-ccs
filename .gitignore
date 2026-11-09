@@ -1,5 +1,7 @@
-/node_modules
+# Dependencias
+node_modules/
 
+# Archivos de respaldo y configuración
 backup-style.css
 .vscode/settings.json
 styles/styles.css.map
